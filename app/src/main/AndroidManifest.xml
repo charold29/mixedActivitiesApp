@@ -14,11 +14,11 @@
         android:theme="@style/Theme.FirstApp">
         <activity
             android:name=".DiceRollerActivity"
-            android:exported="false">
+            android:exported="true">
         </activity>
         <activity
             android:name=".BirthdayActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
