@@ -22,10 +22,10 @@ class DiceRollerActivity : AppCompatActivity() {
 
         rollButton.setOnClickListener {
             toast()
-            rollDice()
+            rollDices()
         }
         // Do a dice roll when the app starts
-        rollDice()
+        rollDices()
     }
 
     /**
@@ -39,7 +39,7 @@ class DiceRollerActivity : AppCompatActivity() {
     /**
      * Roll the dice and update the screen with the result.
      */
-    private fun rollDice() {
+    private fun rollDices() {
         // Create new Dice object with 6 sides and roll it
         val dice = Dice(6)
         val dice2 = Dice(6)
