@@ -4,10 +4,10 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Html
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.text.HtmlCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             ).show()
 
             val htmlClicksText = "<b>Clicks: </b> $timesClicked"
-            txtClick.text = Html.fromHtml(htmlClicksText)
+            txtClick.text = HtmlCompat.fromHtml(htmlClicksText,HtmlCompat.FROM_HTML_MODE_LEGACY)
         }
     }
 

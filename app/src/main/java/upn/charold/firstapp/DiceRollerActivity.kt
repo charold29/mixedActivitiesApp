@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import upn.charold.firstapp.model.Dice
 
@@ -45,17 +44,16 @@ class DiceRollerActivity : AppCompatActivity() {
 
         // Update the screen with the dice roll
         val diceImage:ImageView = findViewById(R.id.dice1_img)
-
-        when(diceRoll){
-            1 -> diceImage.setImageResource(R.drawable.dice_1)
-            2 -> diceImage.setImageResource(R.drawable.dice_2)
-            3 -> diceImage.setImageResource(R.drawable.dice_3)
-            4 -> diceImage.setImageResource(R.drawable.dice_4)
-            5 -> diceImage.setImageResource(R.drawable.dice_5)
-            6 -> diceImage.setImageResource(R.drawable.dice_6)
+        val resourceImage = when(diceRoll) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else ->  R.drawable.dice_6
         }
 
-    //        dice1Image.setImageResource(R.drawable.dice_2)
+        diceImage.setImageResource(resourceImage)
 
     }
 
