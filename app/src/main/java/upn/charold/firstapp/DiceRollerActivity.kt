@@ -44,30 +44,27 @@ class DiceRollerActivity : AppCompatActivity() {
         val dice = Dice(6)
         val dice2 = Dice(6)
 
-        val diceRoll = dice.roll()
-        val diceRoll2 = dice2.roll()
-
         // Find the ImageView in the layout
         val diceImage:ImageView = findViewById(R.id.dice1_img)
         val diceImage2:ImageView = findViewById(R.id.dice2_img)
 
         // Determine which drawable resource ID to use based on the dice roll
-        val resourceImage = determineDrawable(diceRoll)
-        val resourceImage2 = determineDrawable(diceRoll2)
-
+        val resourceImage = determineDrawable(dice.roll())
+        val resourceImage2 = determineDrawable(dice2.roll())
 
         // Update the ImageView with the correct drawable resource ID
         diceImage.setImageResource(resourceImage)
         diceImage2.setImageResource(resourceImage2)
+        
         // Update the content description
-        diceImage.contentDescription = diceRoll.toString()
-        diceImage2.contentDescription = diceRoll2.toString()
+        diceImage.contentDescription = dice.roll().toString()
+        diceImage2.contentDescription = dice2.roll().toString()
 
     }
 
-    private fun determineDrawable( dice: Int ): Int {
+    private fun determineDrawable( diceRollResult: Int ): Int {
         // Determine which drawable resource ID to use based on the dice roll
-        val resourceImage = when(dice) {
+        val resourceImage = when(diceRollResult) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
