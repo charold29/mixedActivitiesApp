@@ -24,13 +24,15 @@ class DiceRollerActivity : AppCompatActivity() {
             toast()
             rollDice()
         }
+        // Do a dice roll when the app starts
+        rollDice()
     }
 
     /**
      * Create toast for dice roll.
      */
     private fun toast() {
-        val toast = Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT)
+        val toast = Toast.makeText(this, "Dices Rolled!", Toast.LENGTH_SHORT)
         toast.show()
     }
 
@@ -40,11 +42,32 @@ class DiceRollerActivity : AppCompatActivity() {
     private fun rollDice() {
         // Create new Dice object with 6 sides and roll it
         val dice = Dice(6)
-        val diceRoll = dice.roll()
+        val dice2 = Dice(6)
 
-        // Update the screen with the dice roll
+        val diceRoll = dice.roll()
+        val diceRoll2 = dice2.roll()
+
+        // Find the ImageView in the layout
         val diceImage:ImageView = findViewById(R.id.dice1_img)
-        val resourceImage = when(diceRoll) {
+        val diceImage2:ImageView = findViewById(R.id.dice2_img)
+
+        // Determine which drawable resource ID to use based on the dice roll
+        val resourceImage = determineDrawable(diceRoll)
+        val resourceImage2 = determineDrawable(diceRoll2)
+
+
+        // Update the ImageView with the correct drawable resource ID
+        diceImage.setImageResource(resourceImage)
+        diceImage2.setImageResource(resourceImage2)
+        // Update the content description
+        diceImage.contentDescription = diceRoll.toString()
+        diceImage2.contentDescription = diceRoll2.toString()
+
+    }
+
+    private fun determineDrawable( dice: Int ): Int {
+        // Determine which drawable resource ID to use based on the dice roll
+        val resourceImage = when(dice) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
@@ -52,9 +75,7 @@ class DiceRollerActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else ->  R.drawable.dice_6
         }
-
-        diceImage.setImageResource(resourceImage)
-
+        return resourceImage
     }
 
 }
