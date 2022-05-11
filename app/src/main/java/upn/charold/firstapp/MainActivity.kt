@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.text.HtmlCompat
+import upn.charold.firstapp.birthday_card.BirthdayActivity
+import upn.charold.firstapp.dice_roller.DiceRollerActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:contentDescription="@string/dice_description"
-    tools:context=".DiceRollerActivity">
+    tools:context=".dice_roller.DiceRollerActivity">
 
     <Button
         android:id="@+id/roll_btn"
@@ -45,5 +45,16 @@
             android:scaleType="fitEnd"
             tools:srcCompat="@drawable/dice_1" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/sumDices_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/dices_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

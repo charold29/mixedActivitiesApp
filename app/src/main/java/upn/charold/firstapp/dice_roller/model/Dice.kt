@@ -1,4 +1,4 @@
-package upn.charold.firstapp.model
+package upn.charold.firstapp.dice_roller.model
 
 class Dice(private val numSides: Int){
 

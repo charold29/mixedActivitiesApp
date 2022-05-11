@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">FirstApp</string>
+    <string name="app_name">MixedActivities</string>
 <!--  Click Counter  -->
     <string name="click_counter_text">Click Counter</string>
     <string name="click_btn_text">Click</string>
     <string name="activities_text">Other Activities</string>
-    <string name="birthday_activity_btn">Birthday</string>
-    <string name="dice_activity_btn">Dice</string>
+    <string name="birthday_activity_btn">Birthday Card</string>
+    <string name="dice_activity_btn">Dice Roller</string>
 <!--  Birthday App  -->
     <string name="birthday_text">Happy Birthday, Harold!</string>
     <string name="signature_text">From your secret friend.</string>

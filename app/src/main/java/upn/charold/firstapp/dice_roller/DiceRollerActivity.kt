@@ -1,11 +1,14 @@
-package upn.charold.firstapp
+package upn.charold.firstapp.dice_roller
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
-import upn.charold.firstapp.model.Dice
+import upn.charold.firstapp.R
+import upn.charold.firstapp.dice_roller.model.Dice
 
 /**
  * This activity allows the user to roll a dice and view the result
@@ -16,7 +19,7 @@ class DiceRollerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dice_roller)
-        this.title = "DiceRollerApp"
+        this.title = "Dice Roller"
 
         val rollButton: Button = findViewById(R.id.roll_btn)
 
@@ -44,21 +47,28 @@ class DiceRollerActivity : AppCompatActivity() {
         val dice = Dice(6)
         val dice2 = Dice(6)
 
+        // Dice roll results
+        val diceRoll = dice.roll()
+        val diceRoll2 = dice2.roll()
+
         // Find the ImageView in the layout
         val diceImage:ImageView = findViewById(R.id.dice1_img)
         val diceImage2:ImageView = findViewById(R.id.dice2_img)
 
         // Determine which drawable resource ID to use based on the dice roll
-        val resourceImage = determineDrawable(dice.roll())
-        val resourceImage2 = determineDrawable(dice2.roll())
+        val resourceImage = determineDrawable(diceRoll)
+        val resourceImage2 = determineDrawable(diceRoll2)
 
         // Update the ImageView with the correct drawable resource ID
         diceImage.setImageResource(resourceImage)
         diceImage2.setImageResource(resourceImage2)
-        
+
         // Update the content description
-        diceImage.contentDescription = dice.roll().toString()
-        diceImage2.contentDescription = dice2.roll().toString()
+        diceImage.contentDescription = diceRoll.toString()
+        diceImage2.contentDescription = diceRoll2.toString()
+
+        // Update the sum result
+        sumDices(diceRoll,diceRoll2)
 
     }
 
@@ -70,9 +80,16 @@ class DiceRollerActivity : AppCompatActivity() {
             3 -> R.drawable.dice_3
             4 -> R.drawable.dice_4
             5 -> R.drawable.dice_5
-            else ->  R.drawable.dice_6
+            else -> R.drawable.dice_6
         }
         return resourceImage
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun sumDices(d1: Int, d2: Int) {
+        val sumText: TextView = findViewById(R.id.sumDices_txt)
+
+        sumText.text = "You rolled a ${d1+d2}"
     }
 
 }
