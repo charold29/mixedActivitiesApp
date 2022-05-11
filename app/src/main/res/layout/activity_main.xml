@@ -56,19 +56,26 @@
         app:layout_constraintTop_toBottomOf="@+id/separator">
 
         <Button
-            android:id="@+id/birthday_act_btn"
-            android:layout_width="wrap_content"
+            android:id="@+id/lemonade_app_btn"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/p1_first"
-            android:text="@string/birthday_activity_btn"
-            tools:ignore="TextContrastCheck" />
+            android:text="@string/lemonade_app_btn" />
 
         <Button
             android:id="@+id/dice_act_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/end_color"
+            android:backgroundTint="@color/p1_second"
             android:text="@string/dice_activity_btn" />
+
+        <Button
+            android:id="@+id/birthday_act_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/end_color"
+            android:text="@string/birthday_activity_btn"
+            tools:ignore="TextContrastCheck" />
 
     </LinearLayout>
 

@@ -4,12 +4,19 @@
     <string name="click_counter_text">Click Counter</string>
     <string name="click_btn_text">Click</string>
     <string name="activities_text">Other Activities</string>
-    <string name="birthday_activity_btn">Birthday Card</string>
+    <string name="lemonade_app_btn">Lemonade App</string>
     <string name="dice_activity_btn">Dice Roller</string>
+    <string name="birthday_activity_btn">Birthday Card</string>
     <!--  Birthday App  -->
     <string name="birthday_text">Happy Birthday, Harold!</string>
     <string name="signature_text">From your secret friend.</string>
     <!--  Dice Roller App  -->
     <string name="dice_roller_btn">Roll</string>
     <string name="dice_description">6 side dice</string>
+    <!-- Lemonade App -->
+    <string name="lemon_select">Click to select a lemon!</string>
+    <string name="lemon_squeeze">Click to juice the lemon!</string>
+    <string name="lemon_drink">Click to drink your lemonade!</string>
+    <string name="lemon_empty_glass">Click to start again!</string>
+    <string name="squeeze_count">Squeeze count: %1$d, keep squeezing!</string>
 </resources>

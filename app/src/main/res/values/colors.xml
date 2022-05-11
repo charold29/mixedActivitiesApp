@@ -11,7 +11,8 @@
 <!-- Downgrade colors - Palette 1
     (https://coolors.co/gradient-palette/b51004-6200ee?number=3) -->
     <color name="start_color">#6200EE</color>
-    <color name="p1_first">#8C0879</color>
+    <color name="p1_first">#7E05A0</color>
+    <color name="p1_second">#990B52</color>
     <color name="end_color">#B51004</color>
 
 </resources>
