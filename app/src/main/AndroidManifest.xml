@@ -10,9 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstApp">
         <activity
+            android:name=".lemonade_app.LemonadeActivity"
+            android:exported="false" />
+        <activity
             android:name=".dice_roller.DiceRollerActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".birthday_card.BirthdayActivity"
             android:exported="true" />
