@@ -10,12 +10,12 @@ import android.widget.Toast
 import androidx.core.text.HtmlCompat
 import upn.charold.firstapp.birthday_card.BirthdayActivity
 import upn.charold.firstapp.dice_roller.DiceRollerActivity
+import upn.charold.firstapp.lemonade_app.LemonadeActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        this.title = "CounterApp"
 
         // Counter app functionality
         counterClick()
@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         // Button activity actions
         val btnBirthday = findViewById<Button>(R.id.birthday_act_btn)
         val btnDice = findViewById<Button>(R.id.dice_act_btn)
+        val btnLemonade = findViewById<Button>(R.id.lemonade_app_btn)
 
         btnBirthday.setOnClickListener{
             changeActivity("Birthday")
@@ -65,6 +66,10 @@ class MainActivity : AppCompatActivity() {
         btnDice.setOnClickListener{
             changeActivity("Dice")
         }
+        btnLemonade.setOnClickListener{
+            changeActivity("Lemonade")
+        }
+
     }
 
     /**
@@ -74,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         when(nameActivity){
             "Birthday" -> startActivity(Intent(this, BirthdayActivity::class.java))
             "Dice" -> startActivity(Intent(this, DiceRollerActivity::class.java))
+            "Lemonade" -> startActivity(Intent(this, LemonadeActivity::class.java))
             else -> throw IllegalArgumentException("Insert a correct parameter with an activity name")
         }
     }

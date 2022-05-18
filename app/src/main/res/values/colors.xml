@@ -15,4 +15,9 @@
     <color name="p1_second">#990B52</color>
     <color name="end_color">#B51004</color>
 
+<!-- Lemonade App -->
+    <color name="yellow_light">#ffff8b</color>
+    <color name="yellow_primary">#ffee58</color>
+    <color name="yellow_dark">#FFD600</color>
+
 </resources>
