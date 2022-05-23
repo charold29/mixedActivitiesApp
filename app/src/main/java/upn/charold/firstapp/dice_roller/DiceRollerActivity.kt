@@ -1,12 +1,14 @@
 package upn.charold.firstapp.dice_roller
 
 import android.annotation.SuppressLint
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import upn.charold.firstapp.R
 import upn.charold.firstapp.dice_roller.model.Dice
 
@@ -19,7 +21,8 @@ class DiceRollerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dice_roller)
-        this.title = "Dice Roller"
+
+        styles()
 
         val rollButton: Button = findViewById(R.id.roll_btn)
 
@@ -92,4 +95,13 @@ class DiceRollerActivity : AppCompatActivity() {
         sumText.text = "You rolled a ${d1+d2}"
     }
 
+    private fun styles() {
+        // Color
+        val color = ContextCompat.getColor(this, R.color.p1_first)
+        // Title
+        this.title = "Dice Roller"
+        // Background ActionBar Color
+        val actionBar = this.supportActionBar
+        actionBar?.setBackgroundDrawable(ColorDrawable(color))
+    }
 }

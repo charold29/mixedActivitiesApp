@@ -1,4 +1,4 @@
-package upn.charold.firstapp.birthday_card
+package upn.charold.firstapp.calculator_app
 
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -6,21 +6,24 @@ import android.os.Bundle
 import androidx.core.content.ContextCompat
 import upn.charold.firstapp.R
 
-class BirthdayActivity : AppCompatActivity() {
+class CalculatorActivity : AppCompatActivity(){
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_birthday)
+        setContentView(R.layout.activity_calculator)
 
         styles()
     }
 
     private fun styles() {
         // Color
-        val color = ContextCompat.getColor(this, R.color.end_color)
+        val color = ContextCompat.getColor(this, R.color.metallic_seaweed)
         // Title
-        this.title = "Birthday Card"
-        // ActionBar
+        this.title = "Tip Calculator"
+        // Background ActionBar Color
         val actionBar = this.supportActionBar
         actionBar?.setBackgroundDrawable(ColorDrawable(color))
     }
+
+
 }

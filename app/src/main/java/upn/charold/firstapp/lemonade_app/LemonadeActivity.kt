@@ -1,13 +1,12 @@
 package upn.charold.firstapp.lemonade_app
 
-import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Html
 import upn.charold.firstapp.R
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import upn.charold.firstapp.lemonade_app.model.LemonTree
 
@@ -155,12 +154,13 @@ class LemonadeActivity : AppCompatActivity() {
         return true
     }
 
-    @Suppress("DEPRECATION")
     private fun styles() {
+        // Color
+        val color = ContextCompat.getColor(this, R.color.yellow_dark)
         // Title
-        this.title = Html.fromHtml("<font color='#000000'>Lemonade App </font>")
+        this.title = "Lemonade App"
         // Background ActionBar Color
         val actionBar = this.supportActionBar
-        actionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#ffee58")))
+        actionBar?.setBackgroundDrawable(ColorDrawable(color))
     }
 }

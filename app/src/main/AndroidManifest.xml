@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstApp">
         <activity
+            android:name=".calculator_app.CalculatorActivity"
+            android:exported="true" />
+        <activity
             android:name=".lemonade_app.LemonadeActivity"
             android:exported="true" />
         <activity

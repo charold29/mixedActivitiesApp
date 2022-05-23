@@ -7,6 +7,7 @@
     <string name="lemonade_app_btn">Lemonade App</string>
     <string name="dice_activity_btn">Dice Roller</string>
     <string name="birthday_activity_btn">Birthday Card</string>
+    <string name="tip_calculator_activity_btn">Tip Calculator</string>
     <!--  Birthday App  -->
     <string name="birthday_text">Happy Birthday, Harold!</string>
     <string name="signature_text">From your secret friend.</string>
@@ -20,4 +21,13 @@
     <string name="lemon_empty_glass">Click to start again!</string>
     <string name="squeeze_count">Squeeze count: %1$d, keep squeezing!</string>
     <string name="lemon_tree_description">3 lemoned tree</string>
+    <!-- Calculator App -->
+    <string name="cost_of_service">Cost of Service</string>
+    <string name="how_was_the_service">How was the service?</string>
+    <string name="amazing_service">Amazing (20%)</string>
+    <string name="eighteen_percent">Good (18%)</string>
+    <string name="fifteen_percent">OK (15%)</string>
+    <string name="round_up_switch">Round up tip?</string>
+    <string name="calculate">Calculate</string>
+    <string name="tip_amount">Tip Amount</string>
 </resources>

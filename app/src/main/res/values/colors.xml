@@ -11,13 +11,17 @@
 <!-- Downgrade colors - Palette 1
     (https://coolors.co/gradient-palette/b51004-6200ee?number=3) -->
     <color name="start_color">#6200EE</color>
-    <color name="p1_first">#7E05A0</color>
-    <color name="p1_second">#990B52</color>
+    <color name="p1_first">#7704B4</color>
+    <color name="p1_second">#8C0879</color>
+    <color name="p1_third">#A00C3F</color>
     <color name="end_color">#B51004</color>
 
 <!-- Lemonade App -->
     <color name="yellow_light">#ffff8b</color>
     <color name="yellow_primary">#ffee58</color>
     <color name="yellow_dark">#FFD600</color>
+
+<!-- Tip Calculator -->
+    <color name="metallic_seaweed">#00798C</color>
 
 </resources>

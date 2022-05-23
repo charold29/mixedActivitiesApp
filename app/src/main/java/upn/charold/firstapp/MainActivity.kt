@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.text.HtmlCompat
 import upn.charold.firstapp.birthday_card.BirthdayActivity
+import upn.charold.firstapp.calculator_app.CalculatorActivity
 import upn.charold.firstapp.dice_roller.DiceRollerActivity
 import upn.charold.firstapp.lemonade_app.LemonadeActivity
 
@@ -56,9 +57,10 @@ class MainActivity : AppCompatActivity() {
      */
     private fun otherActivities() {
         // Button activity actions
-        val btnBirthday = findViewById<Button>(R.id.birthday_act_btn)
-        val btnDice = findViewById<Button>(R.id.dice_act_btn)
-        val btnLemonade = findViewById<Button>(R.id.lemonade_app_btn)
+        val btnBirthday = findViewById<Button>(R.id.birthday_card_activity)
+        val btnDice = findViewById<Button>(R.id.dice_roller_activity)
+        val btnLemonade = findViewById<Button>(R.id.lemonade_app)
+        val btnTipCalculator = findViewById<Button>(R.id.tip_calculator_activity)
 
         btnBirthday.setOnClickListener{
             changeActivity("Birthday")
@@ -67,7 +69,10 @@ class MainActivity : AppCompatActivity() {
             changeActivity("Dice")
         }
         btnLemonade.setOnClickListener{
-            changeActivity("Lemonade")
+            changeActivity("Lemonade App")
+        }
+        btnTipCalculator.setOnClickListener{
+            changeActivity("Tip Calculator")
         }
 
     }
@@ -79,7 +84,8 @@ class MainActivity : AppCompatActivity() {
         when(nameActivity){
             "Birthday" -> startActivity(Intent(this, BirthdayActivity::class.java))
             "Dice" -> startActivity(Intent(this, DiceRollerActivity::class.java))
-            "Lemonade" -> startActivity(Intent(this, LemonadeActivity::class.java))
+            "Lemonade App" -> startActivity(Intent(this, LemonadeActivity::class.java))
+            "Tip Calculator" -> startActivity(Intent(this, CalculatorActivity::class.java))
             else -> throw IllegalArgumentException("Insert a correct parameter with an activity name")
         }
     }
