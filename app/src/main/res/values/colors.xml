@@ -20,6 +20,7 @@
     <color name="yellow_light">#ffff8b</color>
     <color name="yellow_primary">#ffee58</color>
     <color name="yellow_dark">#FFD600</color>
+    <color name="yellow_text">#795548</color>
 
 <!-- Tip Calculator -->
     <color name="metallic_seaweed">#00798C</color>

@@ -1,5 +1,6 @@
 package upn.charold.firstapp.lemonade_app
 
+import android.annotation.SuppressLint
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -113,8 +114,10 @@ class LemonadeActivity : AppCompatActivity() {
     /**
      * Set up the view elements according to the state.
      */
+    @SuppressLint("SetTextI18n")
     private fun setViewElements() {
         val textAction: TextView = findViewById(R.id.text_action)
+        val textSqueezesCounter: TextView = findViewById(R.id.squeeze_counter)
 
         when (lemonadeState){
             SELECT -> {
@@ -124,10 +127,12 @@ class LemonadeActivity : AppCompatActivity() {
             SQUEEZE -> {
                 textAction.setText(R.string.lemon_squeeze)
                 lemonImage?.setImageResource(R.drawable.lemon_squeeze)
+                textSqueezesCounter.text = "You still have $lemonSize squeezes left"
             }
             DRINK -> {
                 textAction.setText(R.string.lemon_drink)
                 lemonImage?.setImageResource(R.drawable.lemon_drink)
+                textSqueezesCounter.text = ""
             }
             RESTART -> {
                 textAction.setText(R.string.lemon_empty_glass)

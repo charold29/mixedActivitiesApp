@@ -30,4 +30,5 @@
     <string name="round_up_switch">Round up tip?</string>
     <string name="calculate">Calculate</string>
     <string name="tip_amount">Tip Amount</string>
+    <string name="squeezes_left">You still have 3 squeezes left</string>
 </resources>

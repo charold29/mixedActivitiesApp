@@ -25,5 +25,4 @@ class CalculatorActivity : AppCompatActivity(){
         actionBar?.setBackgroundDrawable(ColorDrawable(color))
     }
 
-
 }

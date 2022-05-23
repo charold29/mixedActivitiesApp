@@ -70,7 +70,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/yellow_dark"
-            android:text="@string/lemonade_app_btn" />
+            android:text="@string/lemonade_app_btn"
+            android:textColor="@color/yellow_text" />
 
         <Button
             android:id="@+id/dice_roller_activity"
