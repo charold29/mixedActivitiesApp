@@ -1,4 +1,4 @@
-package upn.charold.firstapp.dice_roller
+package upn.charold.mixed_activities_app.dice_roller
 
 import android.annotation.SuppressLint
 import android.graphics.drawable.ColorDrawable
@@ -9,8 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import upn.charold.firstapp.R
-import upn.charold.firstapp.dice_roller.model.Dice
+import upn.charold.mixed_activities_app.R
+import upn.charold.mixed_activities_app.dice_roller.model.Dice
 
 /**
  * This activity allows the user to roll a dice and view the result

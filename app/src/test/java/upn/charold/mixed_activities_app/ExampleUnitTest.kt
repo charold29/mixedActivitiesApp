@@ -1,9 +1,9 @@
-package upn.charold.firstapp
+package upn.charold.mixed_activities_app
 
 import org.junit.Test
 
 import org.junit.Assert.*
-import upn.charold.firstapp.dice_roller.model.Dice
+import upn.charold.mixed_activities_app.dice_roller.model.Dice
 
 /**
  * Example local unit test, which will execute on the development machine (host).

@@ -1,4 +1,4 @@
-package upn.charold.firstapp
+package upn.charold.mixed_activities_app
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package upn.charold.firstapp
+package upn.charold.mixed_activities_app
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,10 +8,10 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.text.HtmlCompat
-import upn.charold.firstapp.birthday_card.BirthdayActivity
-import upn.charold.firstapp.calculator_app.CalculatorActivity
-import upn.charold.firstapp.dice_roller.DiceRollerActivity
-import upn.charold.firstapp.lemonade_app.LemonadeActivity
+import upn.charold.mixed_activities_app.birthday_card.BirthdayActivity
+import upn.charold.mixed_activities_app.calculator_app.CalculatorActivity
+import upn.charold.mixed_activities_app.dice_roller.DiceRollerActivity
+import upn.charold.mixed_activities_app.lemonade_app.LemonadeActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

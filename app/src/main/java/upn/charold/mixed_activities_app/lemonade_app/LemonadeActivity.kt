@@ -1,15 +1,15 @@
-package upn.charold.firstapp.lemonade_app
+package upn.charold.mixed_activities_app.lemonade_app
 
 import android.annotation.SuppressLint
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import upn.charold.firstapp.R
+import upn.charold.mixed_activities_app.R
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
-import upn.charold.firstapp.lemonade_app.model.LemonTree
+import upn.charold.mixed_activities_app.lemonade_app.model.LemonTree
 
 private const val LEMONADE_STATE = "LEMONADE_STATE"
 private const val LEMON_SIZE = "LEMON_SIZE"

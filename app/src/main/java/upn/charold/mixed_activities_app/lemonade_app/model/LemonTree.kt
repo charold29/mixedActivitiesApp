@@ -1,4 +1,4 @@
-package upn.charold.firstapp.lemonade_app.model
+package upn.charold.mixed_activities_app.lemonade_app.model
 
 /**
  * A Lemon tree class with a method to "pick" a lemon. The "size" of the lemon is randomized

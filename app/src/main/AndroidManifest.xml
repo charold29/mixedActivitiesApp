@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="upn.charold.firstapp">
+    package="upn.charold.mixed_activities_app">
 
     <application
         android:allowBackup="true"
@@ -8,21 +8,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FirstApp">
+        android:theme="@style/Theme.MixedActivitiesApp">
         <activity
-            android:name=".calculator_app.CalculatorActivity"
+            android:name="upn.charold.mixed_activities_app.calculator_app.CalculatorActivity"
             android:exported="true" />
         <activity
-            android:name=".lemonade_app.LemonadeActivity"
+            android:name="upn.charold.mixed_activities_app.lemonade_app.LemonadeActivity"
             android:exported="true" />
         <activity
-            android:name=".dice_roller.DiceRollerActivity"
+            android:name="upn.charold.mixed_activities_app.dice_roller.DiceRollerActivity"
             android:exported="true" />
         <activity
-            android:name=".birthday_card.BirthdayActivity"
+            android:name="upn.charold.mixed_activities_app.birthday_card.BirthdayActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name="upn.charold.mixed_activities_app.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
