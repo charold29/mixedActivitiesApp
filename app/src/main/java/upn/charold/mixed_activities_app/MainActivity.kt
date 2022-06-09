@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.text.HtmlCompat
 import upn.charold.mixed_activities_app.birthday_card.BirthdayActivity
-import upn.charold.mixed_activities_app.calculator_app.CalculatorActivity
+import upn.charold.mixed_activities_app.tip_calculator.CalculatorActivity
 import upn.charold.mixed_activities_app.dice_roller.DiceRollerActivity
 import upn.charold.mixed_activities_app.lemonade_app.LemonadeActivity
 

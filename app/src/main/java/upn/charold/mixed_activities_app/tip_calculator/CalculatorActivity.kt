@@ -1,4 +1,4 @@
-package upn.charold.mixed_activities_app.calculator_app
+package upn.charold.mixed_activities_app.tip_calculator
 
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
