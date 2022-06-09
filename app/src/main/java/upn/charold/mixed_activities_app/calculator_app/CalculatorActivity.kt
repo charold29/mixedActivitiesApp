@@ -62,12 +62,14 @@ class CalculatorActivity : AppCompatActivity(){
 
     private fun styles() {
         // Color
-        val color = ContextCompat.getColor(this, R.color.metallic_seaweed)
+        val activityColor = ContextCompat.getColor(this, R.color.metallic_seaweed)
         // Title
         this.title = "Tip Calculator"
         // Background ActionBar Color
         val actionBar = this.supportActionBar
-        actionBar?.setBackgroundDrawable(ColorDrawable(color))
+        actionBar?.setBackgroundDrawable(ColorDrawable(activityColor))
+        // StatusBar Color
+        window.statusBarColor = activityColor
     }
 
 }

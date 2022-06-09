@@ -2,14 +2,17 @@ package upn.charold.mixed_activities_app.lemonade_app
 
 import android.annotation.SuppressLint
 import android.graphics.drawable.ColorDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import upn.charold.mixed_activities_app.R
+import android.text.Html
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.text.HtmlCompat
 import com.google.android.material.snackbar.Snackbar
+import upn.charold.mixed_activities_app.R
 import upn.charold.mixed_activities_app.lemonade_app.model.LemonTree
+
 
 private const val LEMONADE_STATE = "LEMONADE_STATE"
 private const val LEMON_SIZE = "LEMON_SIZE"
@@ -161,11 +164,14 @@ class LemonadeActivity : AppCompatActivity() {
 
     private fun styles() {
         // Color
-        val color = ContextCompat.getColor(this, R.color.yellow_dark)
+        val activityColor = ContextCompat.getColor(this, R.color.yellow_dark)
         // Title
-        this.title = "Lemonade App"
+        val styledText = "<font color='#795548'>Lemonade App</font>."
+        this.title = HtmlCompat.fromHtml(styledText, HtmlCompat.FROM_HTML_MODE_LEGACY)
         // Background ActionBar Color
         val actionBar = this.supportActionBar
-        actionBar?.setBackgroundDrawable(ColorDrawable(color))
+        actionBar?.setBackgroundDrawable(ColorDrawable(activityColor))
+        // StatusBar Color
+        window.statusBarColor = activityColor
     }
 }

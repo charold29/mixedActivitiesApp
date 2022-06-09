@@ -97,11 +97,13 @@ class DiceRollerActivity : AppCompatActivity() {
 
     private fun styles() {
         // Color
-        val color = ContextCompat.getColor(this, R.color.p1_first)
+        val activityColor = ContextCompat.getColor(this, R.color.p1_first)
         // Title
         this.title = "Dice Roller"
         // Background ActionBar Color
         val actionBar = this.supportActionBar
-        actionBar?.setBackgroundDrawable(ColorDrawable(color))
+        actionBar?.setBackgroundDrawable(ColorDrawable(activityColor))
+        // StatusBar Color
+        window.statusBarColor = activityColor
     }
 }

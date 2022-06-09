@@ -16,11 +16,13 @@ class BirthdayActivity : AppCompatActivity() {
 
     private fun styles() {
         // Color
-        val color = ContextCompat.getColor(this, R.color.end_color)
+        val activityColor = ContextCompat.getColor(this, R.color.end_color)
         // Title
         this.title = "Birthday Card"
         // ActionBar
         val actionBar = this.supportActionBar
-        actionBar?.setBackgroundDrawable(ColorDrawable(color))
+        actionBar?.setBackgroundDrawable(ColorDrawable(activityColor))
+        // StatusBar Color
+        window.statusBarColor = activityColor
     }
 }
