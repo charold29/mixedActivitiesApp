@@ -31,4 +31,5 @@
     <string name="calculate">Calculate</string>
     <string name="tip_amount">Tip Amount: %s</string>
     <string name="squeezes_left">You still have 3 squeezes left</string>
+    <string name="cook_conv_activity_btn">Unit Converter</string>
 </resources>

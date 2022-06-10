@@ -5,18 +5,23 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.text.HtmlCompat
 import upn.charold.mixed_activities_app.birthday_card.BirthdayActivity
+import upn.charold.mixed_activities_app.cooking_converter.CookConvActivity
+import upn.charold.mixed_activities_app.databinding.ActivityMainBinding
 import upn.charold.mixed_activities_app.tip_calculator.CalculatorActivity
 import upn.charold.mixed_activities_app.dice_roller.DiceRollerActivity
 import upn.charold.mixed_activities_app.lemonade_app.LemonadeActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Counter app functionality
         counterClick()
@@ -32,14 +37,14 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun counterClick() {
         // get reference to txt
-        val txtClick = findViewById<TextView>(R.id.txt_click)
+        val txtClickCounter = binding.txtClickCounter
         // get reference to button
-        val btnClick = findViewById<Button>(R.id.btn_click)
+        val btnClickCounter = binding.btnClickCounter
 
         var timesClicked = 0
 
         // set on-click listener
-        btnClick.setOnClickListener {
+        btnClickCounter.setOnClickListener {
             // your code to perform when the user clicks on the button
             timesClicked += 1
 
@@ -48,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             ).show()
 
             val htmlClicksText = "<b>Clicks: </b> $timesClicked"
-            txtClick.text = HtmlCompat.fromHtml(htmlClicksText,HtmlCompat.FROM_HTML_MODE_LEGACY)
+            txtClickCounter.text = HtmlCompat.fromHtml(htmlClicksText,HtmlCompat.FROM_HTML_MODE_LEGACY)
         }
     }
 
@@ -57,10 +62,11 @@ class MainActivity : AppCompatActivity() {
      */
     private fun otherActivities() {
         // Button activity actions
-        val btnBirthday = findViewById<Button>(R.id.birthday_card_activity)
-        val btnDice = findViewById<Button>(R.id.dice_roller_activity)
-        val btnLemonade = findViewById<Button>(R.id.lemonade_app)
-        val btnTipCalculator = findViewById<Button>(R.id.tip_calculator_activity)
+        val btnBirthday = binding.birthdayCardActivity
+        val btnDice = binding.diceRollerActivity
+        val btnLemonade = binding.lemonadeApp
+        val btnTipCalculator = binding.tipCalculatorActivity
+        val btnCookConverter = binding.cookingConverterActivity
 
         btnBirthday.setOnClickListener{
             changeActivity("Birthday")
@@ -74,6 +80,9 @@ class MainActivity : AppCompatActivity() {
         btnTipCalculator.setOnClickListener{
             changeActivity("Tip Calculator")
         }
+        btnCookConverter.setOnClickListener {
+            changeActivity("Cook Converter")
+        }
 
     }
 
@@ -86,6 +95,7 @@ class MainActivity : AppCompatActivity() {
             "Dice" -> startActivity(Intent(this, DiceRollerActivity::class.java))
             "Lemonade App" -> startActivity(Intent(this, LemonadeActivity::class.java))
             "Tip Calculator" -> startActivity(Intent(this, CalculatorActivity::class.java))
+            "Cook Converter" -> startActivity(Intent(this, CookConvActivity::class.java))
             else -> throw IllegalArgumentException("Insert a correct parameter with an activity name")
         }
     }

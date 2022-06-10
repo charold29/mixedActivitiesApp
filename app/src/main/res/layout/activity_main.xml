@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/txt_click"
+        android:id="@+id/txt_click_counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -20,7 +20,7 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/btn_click"
+        android:id="@+id/btn_click_counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -29,7 +29,7 @@
         app:layout_constraintBottom_toTopOf="@id/separator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_click" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_click_counter" />
 
     <View
         android:id="@+id/separator"
@@ -41,7 +41,7 @@
         app:layout_constraintBottom_toTopOf="@id/activities_txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_click" />
+        app:layout_constraintTop_toBottomOf="@id/btn_click_counter" />
 
 
     <TextView
@@ -94,6 +94,13 @@
             android:layout_height="wrap_content"
             android:text="@string/tip_calculator_activity_btn"
             android:backgroundTint="@color/metallic_seaweed"/>
+
+        <Button
+            android:id="@+id/cooking_converter_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cook_conv_activity_btn"
+            android:backgroundTint="@color/chocolate_web"/>
 
     </LinearLayout>
 
