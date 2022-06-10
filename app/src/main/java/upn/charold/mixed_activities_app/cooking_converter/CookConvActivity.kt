@@ -2,11 +2,14 @@ package upn.charold.mixed_activities_app.cooking_converter
 
 import android.annotation.SuppressLint
 import android.graphics.drawable.ColorDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View.OnFocusChangeListener
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import upn.charold.mixed_activities_app.R
 import upn.charold.mixed_activities_app.databinding.ActivityCookConvBinding
+import java.text.NumberFormat
+
 
 class CookConvActivity : AppCompatActivity() {
 
@@ -22,29 +25,49 @@ class CookConvActivity : AppCompatActivity() {
             convertGramsToCups()
         }
 
-        val milliliters = binding.amountOfMilliliters
+        binding.amountOfMilliliters.setOnFocusChangeListener { _, _ ->
+            convertMillilitersToFluidOunces()
+        }
 
     }
 
     @SuppressLint("SetTextI18n")
-    private fun convertGramsToCups(){
+    private fun convertGramsToCups() {
 
         val gramsInTextField = binding.amountOfGrams.text.toString()
         val grams = gramsInTextField.toDoubleOrNull()
 
-        if (grams == null || grams == 0.0){
-            binding.conversionCups.text = "0 cup"
+        if (grams == null || grams == 0.0) {
+            binding.conversionCups.text = "0 cups"
             return
         }
 
         val result = grams * 0.004
 
         // Display result on screen
-        binding.conversionCups.text = "$result cups"
+        val formattedResult = NumberFormat.getNumberInstance().format(result)
+        binding.conversionCups.text = "$formattedResult cups"
 
     }
 
+    @SuppressLint("SetTextI18n")
+    private fun convertMillilitersToFluidOunces() {
 
+        val millilitersToTextField = binding.amountOfMilliliters.text.toString()
+        val milliliters = millilitersToTextField.toDoubleOrNull()
+
+        if (milliliters == null || milliliters == 0.0) {
+            binding.conversionFluidOunces.text = "0 fluid ounces"
+            return
+        }
+
+        val result = milliliters * 0.033814
+
+        // Display result on screen
+        val formattedResult = NumberFormat.getNumberInstance().format(result)
+        binding.conversionFluidOunces.text = "$formattedResult fluid ounces"
+
+    }
 
     private fun styles() {
         // Color
