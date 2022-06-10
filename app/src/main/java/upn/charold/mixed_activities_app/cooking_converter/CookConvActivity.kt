@@ -3,7 +3,8 @@ package upn.charold.mixed_activities_app.cooking_converter
 import android.annotation.SuppressLint
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.View.OnFocusChangeListener
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import upn.charold.mixed_activities_app.R
@@ -21,13 +22,17 @@ class CookConvActivity : AppCompatActivity() {
         setContentView(binding.root)
         styles()
 
-        binding.amountOfGrams.setOnFocusChangeListener { _, _ ->
-            convertGramsToCups()
+        val inputTextWatcher: TextWatcher = object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                convertGramsToCups()
+                convertMillilitersToFluidOunces()
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
         }
 
-        binding.amountOfMilliliters.setOnFocusChangeListener { _, _ ->
-            convertMillilitersToFluidOunces()
-        }
+        binding.amountOfGrams.addTextChangedListener(inputTextWatcher)
+        binding.amountOfMilliliters.addTextChangedListener(inputTextWatcher)
 
     }
 
