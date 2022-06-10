@@ -32,4 +32,11 @@
     <string name="tip_amount">Tip Amount: %s</string>
     <string name="squeezes_left">You still have 3 squeezes left</string>
     <string name="cook_conv_activity_btn">Unit Converter</string>
+    <string name="amount_grams"># of grams</string>
+    <string name="convert_grams_to_cups">Convert Grams to Cups</string>
+    <string name="equal">=</string>
+    <string name="conversion_cups">0 cup</string>
+    <string name="convert_milliliters_to_ounces">Convert Milliliters to Fluid Ounces</string>
+    <string name="amount_milliliters"># of milliliters</string>
+    <string name="conversion_fluid_ounces">0 fluid ounces</string>
 </resources>

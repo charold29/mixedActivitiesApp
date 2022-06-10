@@ -1,18 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Based on https://coda.io/@laila-robinson/cooking-measurements-conversion-chart/what-is-600-grams-in-cups-35 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".cooking_converter.CookConvActivity">
 
-    <EditText
-        android:id="@+id/x"
+    <!-- GRAMS TO CUPS -->
+    <TextView
+        android:id="@+id/grams_to_cup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/convert_grams_to_cups"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/grams_to_cup_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grams_to_cup">
+
+        <EditText
+            android:id="@+id/amount_of_grams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:hint="@string/amount_grams"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="@string/equal" />
+
+        <TextView
+            android:id="@+id/conversion_cups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/conversion_cups" />
+
+    </LinearLayout>
+
+    <!-- MILLILITERS TO FLUID OUNCES -->
+    <TextView
+        android:id="@+id/milliliters_to_ounces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/convert_milliliters_to_ounces"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grams_to_cup_result" />
+
+    <LinearLayout
+        android:id="@+id/milliliters_to_ounces_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/milliliters_to_ounces">
+
+        <EditText
+            android:id="@+id/amount_of_milliliters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:hint="@string/amount_milliliters"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="@string/equal" />
+
+        <TextView
+            android:id="@+id/conversion_fluid_ounces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/conversion_fluid_ounces" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
