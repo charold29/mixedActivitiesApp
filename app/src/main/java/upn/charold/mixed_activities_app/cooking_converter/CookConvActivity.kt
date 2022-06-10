@@ -1,5 +1,6 @@
 package upn.charold.mixed_activities_app.cooking_converter
 
+import android.annotation.SuppressLint
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,9 +16,35 @@ class CookConvActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCookConvBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         styles()
+
+        binding.amountOfGrams.setOnFocusChangeListener { _, _ ->
+            convertGramsToCups()
+        }
+
+        val milliliters = binding.amountOfMilliliters
+
     }
+
+    @SuppressLint("SetTextI18n")
+    private fun convertGramsToCups(){
+
+        val gramsInTextField = binding.amountOfGrams.text.toString()
+        val grams = gramsInTextField.toDoubleOrNull()
+
+        if (grams == null || grams == 0.0){
+            binding.conversionCups.text = "0 cup"
+            return
+        }
+
+        val result = grams * 0.004
+
+        // Display result on screen
+        binding.conversionCups.text = "$result cups"
+
+    }
+
+
 
     private fun styles() {
         // Color

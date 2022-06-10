@@ -17,9 +17,7 @@ class CalculatorActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityCalculatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         styles()
-
 
         binding.calculateButton.setOnClickListener{
             calculateTip()
