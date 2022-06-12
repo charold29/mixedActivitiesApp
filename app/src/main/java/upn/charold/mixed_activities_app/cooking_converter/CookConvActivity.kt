@@ -5,7 +5,6 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import kotlin.math.round
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -50,10 +49,24 @@ class CookConvActivity : AppCompatActivity() {
         }
 
         val result = grams * 0.004226752838
+        val roundedResult = result.round(2)
+        val fractionResult: String
+
+        // For fraction
+        val intPart = Decimal(roundedResult).parteEntera
+        val fractionPart = Decimal(roundedResult).fraction
+
+        fractionResult = if (fractionPart == "+1") {
+            " or ${intPart+1} oz"
+        }else{
+            " or $intPart "
+                .plus(fractionPart)
+                .plus(" oz")
+        }
 
         // Display result on screen
-        val roundedResult = result.round(2)
         binding.conversionCups.text = "$roundedResult cups"
+        binding.conversionCupsFraction.text = fractionResult
 
     }
 
@@ -69,10 +82,24 @@ class CookConvActivity : AppCompatActivity() {
         }
 
         val result = milliliters * 0.033814
+        val roundedResult = result.round(2)
+        val fractionResult: String
+
+        // For fraction
+        val intPart = Decimal(roundedResult).parteEntera
+        val fractionPart = Decimal(roundedResult).fraction
+
+        fractionResult = if (fractionPart == "+1") {
+            " or ${intPart+1} oz"
+        }else{
+            " or $intPart "
+                .plus(fractionPart)
+                .plus(" oz")
+        }
 
         // Display result on screen
-        val roundedResult = result.round(2)
-        binding.conversionFluidOunces.text = "$roundedResult fluid ounces"
+        binding.conversionFluidOunces.text = "$roundedResult oz"
+        binding.conversionFluidOuncesFraction.text = fractionResult
 
     }
 
