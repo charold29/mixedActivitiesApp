@@ -5,6 +5,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.text.style.TtsSpan
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import upn.charold.mixed_activities_app.R
