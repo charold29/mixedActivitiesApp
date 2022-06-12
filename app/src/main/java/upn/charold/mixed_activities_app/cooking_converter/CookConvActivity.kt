@@ -50,19 +50,7 @@ class CookConvActivity : AppCompatActivity() {
 
         val result = grams * 0.004226752838
         val roundedResult = result.round(2)
-        val fractionResult: String
-
-        // For fraction
-        val intPart = Decimal(roundedResult).parteEntera
-        val fractionPart = Decimal(roundedResult).fraction
-
-        fractionResult = if (fractionPart == "+1") {
-            " or ${intPart+1} oz"
-        }else{
-            " or $intPart "
-                .plus(fractionPart)
-                .plus(" oz")
-        }
+        val fractionResult: String = Decimal(roundedResult).vulgarFraction()
 
         // Display result on screen
         binding.conversionCups.text = "$roundedResult cups"
@@ -83,19 +71,7 @@ class CookConvActivity : AppCompatActivity() {
 
         val result = milliliters * 0.033814
         val roundedResult = result.round(2)
-        val fractionResult: String
-
-        // For fraction
-        val intPart = Decimal(roundedResult).parteEntera
-        val fractionPart = Decimal(roundedResult).fraction
-
-        fractionResult = if (fractionPart == "+1") {
-            " or ${intPart+1} oz"
-        }else{
-            " or $intPart "
-                .plus(fractionPart)
-                .plus(" oz")
-        }
+        val fractionResult: String = Decimal(roundedResult).vulgarFraction()
 
         // Display result on screen
         binding.conversionFluidOunces.text = "$roundedResult oz"
