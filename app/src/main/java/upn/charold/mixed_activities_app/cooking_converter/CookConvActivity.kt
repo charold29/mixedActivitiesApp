@@ -5,13 +5,13 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.text.style.TtsSpan
+import android.util.Log
+import kotlin.math.round
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import upn.charold.mixed_activities_app.R
+import upn.charold.mixed_activities_app.cooking_converter.utils.Decimal
 import upn.charold.mixed_activities_app.databinding.ActivityCookConvBinding
-import java.text.NumberFormat
-
 
 class CookConvActivity : AppCompatActivity() {
 
@@ -28,6 +28,7 @@ class CookConvActivity : AppCompatActivity() {
                 convertGramsToCups()
                 convertMillilitersToFluidOunces()
             }
+
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
         }
@@ -48,11 +49,11 @@ class CookConvActivity : AppCompatActivity() {
             return
         }
 
-        val result = grams * 0.004
+        val result = grams * 0.004226752838
 
         // Display result on screen
-        val formattedResult = NumberFormat.getNumberInstance().format(result)
-        binding.conversionCups.text = "$formattedResult cups"
+        val roundedResult = result.round(2)
+        binding.conversionCups.text = "$roundedResult cups"
 
     }
 
@@ -70,9 +71,15 @@ class CookConvActivity : AppCompatActivity() {
         val result = milliliters * 0.033814
 
         // Display result on screen
-        val formattedResult = NumberFormat.getNumberInstance().format(result)
-        binding.conversionFluidOunces.text = "$formattedResult fluid ounces"
+        val roundedResult = result.round(2)
+        binding.conversionFluidOunces.text = "$roundedResult fluid ounces"
 
+    }
+
+    private fun Double.round(decimals: Int): Double {
+        var multiplier = 1.0
+        repeat(decimals) { multiplier *= 10 }
+        return round(this * multiplier) / multiplier
     }
 
     private fun styles() {
