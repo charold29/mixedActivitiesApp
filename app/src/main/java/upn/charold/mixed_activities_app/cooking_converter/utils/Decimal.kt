@@ -15,7 +15,7 @@ class Decimal constructor(value: Double){
     }
 
     /*
-    This function return the decimal part of a double number
+    This function return the decimal part of a double number tested only for 2 decimals.
      */
     private fun decimalAfterPoint(): Double {
         // decimal1: if number has just one digit
