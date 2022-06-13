@@ -37,7 +37,6 @@ class Decimal constructor(value: Double){
     private fun fractionAfterPoint(): String{
 
         return when (decimalAfterPoint()) {
-            in 0.0..0.2 ->  ""
             in 0.2..0.3 ->  "1/4"
             in 0.3..0.45 ->  "1/3"
             in 0.45..0.6 ->  "1/2"
