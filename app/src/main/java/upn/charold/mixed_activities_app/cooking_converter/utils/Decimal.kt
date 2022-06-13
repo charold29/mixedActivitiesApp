@@ -37,7 +37,7 @@ class Decimal constructor(value: Double){
     private fun fractionAfterPoint(): String{
 
         return when (decimalAfterPoint()) {
-            in 0.0..0.2 ->  "0"
+            in 0.0..0.2 ->  ""
             in 0.2..0.3 ->  "1/4"
             in 0.3..0.45 ->  "1/3"
             in 0.45..0.6 ->  "1/2"
@@ -52,16 +52,25 @@ class Decimal constructor(value: Double){
     fun vulgarFraction(): String {
         // if integer part of the number is 0 : just return the fraction part
         val fractionResult: String = if (integerPart == 0){
-            " or $fractionPart oz"
+            if (fractionPart == ""){
+                " or 0 "
+            }else
+                " or $fractionPart "
         }else{
-            // if the fraction part returned in the range of 0.9 - 0.99 : return integer part + 1 
-            if (fractionPart == "1") {
-                " or ${integerPart+1} oz"
-            // else return the full fraction (integer part and fraction part)
-            }else{
-                " or $integerPart "
-                    .plus(fractionPart)
-                    .plus(" oz")
+            when (fractionPart) {
+                "" -> {
+                    " or $integerPart "
+                }
+                // if the fraction part returned in the range of 0.9 - 0.99 : return integer part + 1
+                "1" -> {
+                    " or ${integerPart+1} "
+                    // else return the full fraction (integer part and fraction part)
+                }
+                else -> {
+                    " or $integerPart "
+                        .plus(fractionPart)
+                        .plus(" ")
+                }
             }
         }
 

@@ -54,7 +54,7 @@ class CookConvActivity : AppCompatActivity() {
 
         // Display result on screen
         binding.conversionCups.text = "$roundedResult cups"
-        binding.conversionCupsFraction.text = fractionResult
+        binding.conversionCupsFraction.text = fractionResult.plus("cups")
 
     }
 
@@ -75,7 +75,7 @@ class CookConvActivity : AppCompatActivity() {
 
         // Display result on screen
         binding.conversionFluidOunces.text = "$roundedResult oz"
-        binding.conversionFluidOuncesFraction.text = fractionResult
+        binding.conversionFluidOuncesFraction.text = fractionResult.plus("oz")
 
     }
 
