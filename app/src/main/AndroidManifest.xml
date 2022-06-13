@@ -11,25 +11,20 @@
         android:theme="@style/Theme.MixedActivitiesApp">
         <activity
             android:name=".cooking_converter.CookConvActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
         <activity
             android:name=".tip_calculator.CalculatorActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".lemonade_app.LemonadeActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".dice_roller.DiceRollerActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".birthday_card.BirthdayActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

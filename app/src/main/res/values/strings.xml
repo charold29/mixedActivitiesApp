@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mixed Activities</string>
+    <string name="app_name">Dailyfe</string>
     <!--  Click Counter  -->
     <string name="click_counter_text">Click Counter</string>
     <string name="click_btn_text">Click</string>
