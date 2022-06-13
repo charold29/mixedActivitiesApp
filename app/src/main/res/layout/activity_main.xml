@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/click_counter_text"
-        android:textColor="@android:color/darker_gray"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +23,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/start_color"
         android:text="@string/click_btn_text"
         app:layout_constraintBottom_toTopOf="@id/separator"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,38 +67,32 @@
             android:id="@+id/lemonade_app"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/yellow_dark"
-            android:text="@string/lemonade_app_btn"
-            android:textColor="@color/yellow_text" />
+            android:text="@string/lemonade_app_btn" />
 
         <Button
             android:id="@+id/dice_roller_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/p1_second"
             android:text="@string/dice_activity_btn" />
 
         <Button
             android:id="@+id/birthday_card_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/end_color"
             android:text="@string/birthday_activity_btn"
             tools:ignore="TextContrastCheck" />
-        
+
         <Button
             android:id="@+id/tip_calculator_activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tip_calculator_activity_btn"
-            android:backgroundTint="@color/metallic_seaweed"/>
+            android:text="@string/tip_calculator_activity_btn" />
 
         <Button
             android:id="@+id/cooking_converter_activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cook_conv_activity_btn"
-            android:backgroundTint="@color/chocolate_web"/>
+            android:text="@string/cook_conv_activity_btn" />
 
     </LinearLayout>
 

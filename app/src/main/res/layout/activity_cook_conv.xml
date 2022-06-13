@@ -13,7 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/convert_grams_to_cups"
-        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +59,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/convert_milliliters_to_ounces"
-        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/grams_to_cup_result" />

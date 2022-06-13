@@ -2,10 +2,12 @@ package upn.charold.mixed_activities_app
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import upn.charold.mixed_activities_app.birthday_card.BirthdayActivity
 import upn.charold.mixed_activities_app.cooking_converter.CookConvActivity
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        styles()
 
         // Counter app functionality
         counterClick()
@@ -98,6 +101,16 @@ class MainActivity : AppCompatActivity() {
             "Cook Converter" -> startActivity(Intent(this, CookConvActivity::class.java))
             else -> throw IllegalArgumentException("Insert a correct parameter with an activity name")
         }
+    }
+
+    private fun styles() {
+        // Color
+        val activityColor = ContextCompat.getColor(this, R.color.purple_700)
+        // Background ActionBar Color
+        val actionBar = this.supportActionBar
+        actionBar?.setBackgroundDrawable(ColorDrawable(activityColor))
+        // StatusBar Color
+        window.statusBarColor = activityColor
     }
 
 }

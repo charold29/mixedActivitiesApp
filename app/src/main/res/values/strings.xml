@@ -3,7 +3,7 @@
     <!--  Click Counter  -->
     <string name="click_counter_text">Click Counter</string>
     <string name="click_btn_text">Click</string>
-    <string name="activities_text">Other Activities</string>
+    <string name="activities_text">Click on any!</string>
     <string name="lemonade_app_btn">Lemonade App</string>
     <string name="dice_activity_btn">Dice Roller</string>
     <string name="birthday_activity_btn">Birthday Card</string>
