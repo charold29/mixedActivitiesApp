@@ -1,15 +1,19 @@
 package upn.charold.mixed_activities_app.tip_calculator
 
+import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 import upn.charold.mixed_activities_app.R
 import upn.charold.mixed_activities_app.databinding.ActivityCalculatorBinding
 import java.text.NumberFormat
 import kotlin.math.ceil
 
-class CalculatorActivity : AppCompatActivity(){
+class CalculatorActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCalculatorBinding
 
@@ -19,8 +23,10 @@ class CalculatorActivity : AppCompatActivity(){
         setContentView(binding.root)
         styles()
 
-        binding.calculateButton.setOnClickListener{
-            calculateTip()
+        binding.calculateButton.setOnClickListener { calculateTip() }
+
+        binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _ ->
+            handleKeyEvent(view, keyCode)
         }
 
     }
@@ -50,12 +56,23 @@ class CalculatorActivity : AppCompatActivity(){
 
     }
 
-    private fun getSelectedPercent(): Double{
-        return when(binding.tipOptions.checkedRadioButtonId) {
+    private fun getSelectedPercent(): Double {
+        return when (binding.tipOptions.checkedRadioButtonId) {
             R.id.option_twenty_percent -> 0.20
             R.id.option_eighteen_percent -> 0.18
             else -> 0.15
         }
+    }
+
+    private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
+            // Hide the keyboard
+            val inputMethodManager =
+                getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+            return true
+        }
+        return false
     }
 
     private fun styles() {

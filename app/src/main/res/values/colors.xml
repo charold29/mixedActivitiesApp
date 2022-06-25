@@ -24,6 +24,8 @@
 
 <!-- Tip Calculator -->
     <color name="metallic_seaweed">#00798C</color>
+    <color name="metallic_seaweed_light">#90DFEC</color>
+    <attr format="color" name="colorPrimaryTipCalculator"/>
 
 <!-- Unit Converter For Cooking-->
     <color name="chocolate_web">#E17313</color>
